@@ -46,6 +46,7 @@ public interface AnnotationMetadata extends ClassMetadata, AnnotatedTypeMetadata
 	 * @return the annotation type names
 	 */
 	default Set<String> getAnnotationTypes() {
+		// 遍历注解并将注解的类型返回，如Component
 		return getAnnotations().stream()
 				.filter(MergedAnnotation::isDirectlyPresent)
 				.map(annotation -> annotation.getType().getName())
