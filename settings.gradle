@@ -56,5 +56,5 @@ settings.gradle.projectsLoaded {
 		}
 	}
 }
-include 'sprng-source-study'
+include 'spring-source-code-study'
 

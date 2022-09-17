@@ -1362,6 +1362,8 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					// Use copy of given root bean definition.
 					// 判断当前BeanDefinition为RootBeanDefinition类型，如果是则clone一个新的RootBeanDefinition返回
 					// 如果不是则新建一个RootBeanDefinition赋值并返回
+					// 也就是如果没有传入parent那么表示不需要合并操作，直接根据原因的beanDefinition生成rootBeanDefinition
+					// 如果该bean definition是rootBeanDefinition那么直接clon一个直接返回，如果不是则根据传入的beanDefination获取该BeanDefination的属性机械能闯入rootBeanDefintion
 					if (bd instanceof RootBeanDefinition rootBeanDef) {
 						mbd = rootBeanDef.cloneBeanDefinition();
 					}

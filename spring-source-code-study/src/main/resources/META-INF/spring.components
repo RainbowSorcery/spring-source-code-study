@@ -1,0 +1,1 @@
+com.lyra.service.UserService=org.springframework.stereotype.Component

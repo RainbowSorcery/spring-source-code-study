@@ -249,6 +249,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 	 * @return number of beans registered
 	 */
 	public int scan(String... basePackages) {
+		// 查看当前有多少bean
 		int beanCountAtScanStart = this.registry.getBeanDefinitionCount();
 
 		// 执行扫描逻辑
@@ -259,6 +260,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 			AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
 		}
 
+		// 注册前bean数量减去注册后bean数量得到本次注册了多少bean
 		return (this.registry.getBeanDefinitionCount() - beanCountAtScanStart);
 	}
 
@@ -292,7 +294,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 				}
 				// 检查bean是否被注册
 				if (checkCandidate(beanName, candidate)) {
-					// 构造一个BeanDefinitionHolder一，BeanDefinitionHolder中封装着beanName和BeanDefinition
+					// 构造一个BeanDefinitionHolder，BeanDefinitionHolder中封装着beanName和BeanDefinition
 					BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(candidate, beanName);
 
 					// 这个先忽略

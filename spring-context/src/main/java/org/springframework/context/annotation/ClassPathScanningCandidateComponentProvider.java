@@ -490,7 +490,7 @@ public class ClassPathScanningCandidateComponentProvider implements EnvironmentC
 	 * @return whether the class qualifies as a candidate component
 	 */
 	protected boolean isCandidateComponent(MetadataReader metadataReader) throws IOException {
-		// 判断该类是否被排除bean 如果被排除则不会被扫描
+		// 判断该类是否被排除bean 如果被排除则不会被扫描 也就是在ComponentScan逐渐中配置ExcludeFilter属性和class将不会被扫描到Spring容器中
 		for (TypeFilter tf : this.excludeFilters) {
 			if (tf.match(metadataReader, getMetadataReaderFactory())) {
 				return false;

@@ -1,2 +1,0 @@
-com.lyra.service.UserService=org.springframework.stereotype.Component
-com.lyra.service.OrderService=org.springframework.stereotype.Component
